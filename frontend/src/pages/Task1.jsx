@@ -94,10 +94,10 @@ const Task1 = () => {
   return (
     <div className="min-h-screen w-full md:p-5 flex justify-center bg-gray-300 items-center">
    
-      <form onSubmit={(e) => handleAddText(e)} className="w-full md:w-[50%] bg-white p-4">
+      <form onSubmit={(e) => handleAddText(e)} className="w-full md:w-[70%] lg:w-[50%] bg-white p-4">
            <h1 className="text-center font-bold text-2xl mb-4">Todo List</h1>
         <input
-          className="w-[80%] p-2 border rounded-md"
+          className="w-full md:w-[80%] p-2 border rounded-md"
           placeholder="Enter any task"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -105,7 +105,7 @@ const Task1 = () => {
               
         <button
           type="submit"
-          className="ml-3 bg-black text-white px-3 py-2 rounded-md"
+          className="ml-3 mt-3 md:mt-0 bg-black text-white px-3 py-2 rounded-md"
         >
           Add
         </button>
@@ -114,7 +114,7 @@ const Task1 = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex justify-between items-center border p-3 rounded-md"
+              className="md:flex flex-row  justify-between items-center border p-3 rounded-md"
             >
               {item.isEdit ? (
                 <input
@@ -128,7 +128,7 @@ const Task1 = () => {
                 </p>
               )}
 
-              <div className="flex gap-2">
+              <div className="flex gap-2 pt-3 md:pt-0">
                 {!item.isEdit && (
                   <button
                     type="button"
